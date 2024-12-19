@@ -1,37 +1,49 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>de.tramotech</groupId>
-  <artifactId>tramotool</artifactId>
+  <groupId>dev.ivangg</groupId>
+  <artifactId>rovly-lib</artifactId>
   <version>0.0.1</version>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
 
-  <name>tramotool</name>
+  <name>rovly-lib</name>
   <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
+
+    <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
+
+    <maven.compiler.source>23</maven.compiler.source>
+    <maven.compiler.target>23</maven.compiler.target>
   </properties>
-<distributionManagement>
-   <repository>
-     <id>github</id>
-     <name>GitHub afikri-code Apache Maven Packages</name>
-     <url>https://maven.pkg.github.com/afikri-code/tramotool</url>
-   </repository>
-</distributionManagement>
+
+  <modules>
+    <module>rovly-lib-clerk</module>
+  </modules>
+
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub ivangarciagarcia Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/ivangarciagarcia/rovly-lib</url>
+    </repository>
+  </distributionManagement>
 
 
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+  <dependencyManagement>
+    <dependencies>
+
+      <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct</artifactId>
+        <version>${org.mapstruct.version}</version>
+      </dependency>
+
+    </dependencies>
+</dependencyManagement>
 
 </project>
