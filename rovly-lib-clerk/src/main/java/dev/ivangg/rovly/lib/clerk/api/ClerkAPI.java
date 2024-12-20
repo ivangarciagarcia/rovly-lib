@@ -4,6 +4,7 @@ import dev.ivangg.rovly.lib.clerk.model.ClerkUser;
 import dev.ivangg.rovly.lib.clerk.model.ClerkUserCount;
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 import java.util.List;
@@ -15,4 +16,6 @@ public interface ClerkAPI {
     @GET("users/count")
     Call<ClerkUserCount> countUsers();
 
+    @GET("users/{user_id}")
+    Call<ClerkUser> getUser(@Path("user_id") String userId);
 }

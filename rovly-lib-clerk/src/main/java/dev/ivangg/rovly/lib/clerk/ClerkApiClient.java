@@ -62,4 +62,9 @@ public class ClerkApiClient {
     public ClerkUserCount countUsers() throws IOException {
         return new CallProcessor<>(api.countUsers()).process();
     }
+
+    public ClerkUser getUser(String userId) throws IOException {
+        return new CallProcessor<>(api.getUser(userId)).process();
+    }
+
 }

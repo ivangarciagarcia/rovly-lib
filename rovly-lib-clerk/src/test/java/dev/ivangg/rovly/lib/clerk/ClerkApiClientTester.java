@@ -12,8 +12,15 @@ public class ClerkApiClientTester {
         ClerkApiClient client = new ClerkApiClient("Secret Key");
 
         List<ClerkUser> clerkUsers = client.listUsers(null);
-        System.out.println("ID: " + clerkUsers.getFirst().getId());
-        System.out.println("NAME: " + clerkUsers.getFirst().getName());
+        System.out.println("USER LIST: " + clerkUsers);
+
+        ClerkUser clerkUser = client.getUser("userId");
+        System.out.println("ID: " + clerkUser.getId());
+        System.out.println("NAME: " + clerkUser.getName());
+
+        Integer userCount = client.countUsers().getCount();
+        System.out.println("USER COUNT: " + userCount);
+
 
         System.out.println("End");
 
