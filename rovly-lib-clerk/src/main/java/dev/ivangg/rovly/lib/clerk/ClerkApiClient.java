@@ -6,6 +6,7 @@ import dev.ivangg.rovly.lib.clerk.api.ClerkAPI;
 import dev.ivangg.rovly.lib.clerk.converters.ClerkJaksonModule;
 import dev.ivangg.rovly.lib.clerk.interceptors.ClerkAuthenticationInterceptor;
 import dev.ivangg.rovly.lib.clerk.model.ClerkUser;
+import dev.ivangg.rovly.lib.clerk.model.ClerkUserCount;
 import dev.ivangg.rovly.lib.clerk.processor.CallProcessor;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -56,5 +57,9 @@ public class ClerkApiClient {
 
     public List<ClerkUser> listUsers(List<String> email) throws IOException {
         return new CallProcessor<>(api.listUsers(email)).process();
+    }
+
+    public ClerkUserCount countUsers() throws IOException {
+        return new CallProcessor<>(api.countUsers()).process();
     }
 }
