@@ -16,6 +16,11 @@
 
     <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
 
+    <jackson.version>2.16.1</jackson.version>
+    <log4j.version>2.19.0</log4j.version>
+    <okhttp.version>4.10.0</okhttp.version>
+    <retrofit.version>2.11.0</retrofit.version>
+
     <maven.compiler.source>23</maven.compiler.source>
     <maven.compiler.target>23</maven.compiler.target>
   </properties>
@@ -41,6 +46,70 @@
         <groupId>org.mapstruct</groupId>
         <artifactId>mapstruct</artifactId>
         <version>${org.mapstruct.version}</version>
+      </dependency>
+
+      <!-- LOG4J -->
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-core</artifactId>
+        <version>${log4j.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-api</artifactId>
+        <version>${log4j.version}</version>
+      </dependency>
+
+      <!--  OKHTTP -->
+      <dependency>
+        <groupId>com.squareup.okhttp3</groupId>
+        <artifactId>okhttp</artifactId>
+        <version>${okhttp.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.squareup.okhttp3</groupId>
+        <artifactId>logging-interceptor</artifactId>
+        <version>${okhttp.version}</version>
+      </dependency>
+
+      <!-- Retrofit -->
+      <dependency>
+        <groupId>com.squareup.retrofit2</groupId>
+        <artifactId>retrofit</artifactId>
+        <version>${retrofit.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.squareup.retrofit2</groupId>
+        <artifactId>converter-jackson</artifactId>
+        <version>${retrofit.version}</version>
+      </dependency>
+
+      <!-- JACKSON -->
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.fasterxml.jackson.dataformat</groupId>
+        <artifactId>jackson-dataformat-xml</artifactId>
+        <version>${jackson.version}</version>
       </dependency>
 
     </dependencies>
