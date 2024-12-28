@@ -5,7 +5,7 @@
 
   <groupId>dev.ivangg</groupId>
   <artifactId>rovly-lib</artifactId>
-  <version>0.0.3</version>
+  <version>0.0.4</version>
   <packaging>pom</packaging>
 
   <name>rovly-lib</name>
