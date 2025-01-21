@@ -1,4 +1,4 @@
-package dev.ivangg.rovly.lib.clerk.model;
+package dev.ivangg.rovly.lib.clerk.model.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class ClerkUser {
     private String id;
     private String name;
+    private String emailId;
 
     public ClerkUser() {
     }
@@ -27,5 +28,14 @@ public class ClerkUser {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @JsonProperty("primary_email_address_id")
+    public String getEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
     }
 }

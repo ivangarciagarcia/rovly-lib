@@ -1,4 +1,4 @@
-package dev.ivangg.rovly.lib.clerk.model;
+package dev.ivangg.rovly.lib.clerk.model.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

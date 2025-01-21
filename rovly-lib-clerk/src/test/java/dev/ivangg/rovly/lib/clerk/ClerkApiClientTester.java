@@ -1,6 +1,7 @@
 package dev.ivangg.rovly.lib.clerk;
 
-import dev.ivangg.rovly.lib.clerk.model.ClerkUser;
+import dev.ivangg.rovly.lib.clerk.model.email.ClerkEmail;
+import dev.ivangg.rovly.lib.clerk.model.user.ClerkUser;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -25,6 +26,8 @@ public class ClerkApiClientTester {
         Integer userCount = client.countUsers().getCount();
         System.out.println("USER COUNT: " + userCount);
 
+        ClerkEmail clerkEmail = client.getEmail(clerkUser.getEmailId());
+        System.out.println("USER EMAIL: " + clerkEmail.getEmail());
 
         System.out.println("End");
 

@@ -2,11 +2,13 @@ package dev.ivangg.rovly.lib.clerk;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dev.ivangg.rovly.lib.clerk.api.ClerkAPI;
+import dev.ivangg.rovly.lib.clerk.api.EmailAPI;
+import dev.ivangg.rovly.lib.clerk.api.UserAPI;
 import dev.ivangg.rovly.lib.clerk.converters.ClerkJaksonModule;
 import dev.ivangg.rovly.lib.clerk.interceptors.ClerkAuthenticationInterceptor;
-import dev.ivangg.rovly.lib.clerk.model.ClerkUser;
-import dev.ivangg.rovly.lib.clerk.model.ClerkUserCount;
+import dev.ivangg.rovly.lib.clerk.model.email.ClerkEmail;
+import dev.ivangg.rovly.lib.clerk.model.user.ClerkUser;
+import dev.ivangg.rovly.lib.clerk.model.user.ClerkUserCount;
 import dev.ivangg.rovly.lib.clerk.processor.CallProcessor;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -25,7 +27,8 @@ public class ClerkApiClient {
     private OkHttpClient httpClient;
     private Retrofit retrofit;
 
-    private ClerkAPI api;
+    private UserAPI userAPI;
+    private EmailAPI emailAPI;
 
     public ClerkApiClient(String apiKey) {
         this.interceptor = new ClerkAuthenticationInterceptor(apiKey);
@@ -52,19 +55,24 @@ public class ClerkApiClient {
                 .build();
 
         // Creamos la API
-        api = retrofit.create(ClerkAPI.class);
+        userAPI = retrofit.create(UserAPI.class);
+        emailAPI = retrofit.create(EmailAPI.class);
     }
 
     public List<ClerkUser> listUsers(List<String> email) throws IOException {
-        return new CallProcessor<>(api.listUsers(email)).process();
+        return new CallProcessor<>(userAPI.listUsers(email)).process();
     }
 
     public ClerkUserCount countUsers() throws IOException {
-        return new CallProcessor<>(api.countUsers()).process();
+        return new CallProcessor<>(userAPI.countUsers()).process();
     }
 
     public ClerkUser getUser(String userId) throws IOException {
-        return new CallProcessor<>(api.getUser(userId)).process();
+        return new CallProcessor<>(userAPI.getUser(userId)).process();
+    }
+
+    public ClerkEmail getEmail(String emailId) throws IOException {
+        return new CallProcessor<>(emailAPI.getEmail(emailId)).process();
     }
 
 }
